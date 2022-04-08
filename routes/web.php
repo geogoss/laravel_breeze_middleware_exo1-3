@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Article;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,8 @@ Route::get('/accueil', function () {
 })->name('accueil');
 
 Route::get('/article', function () {
-    return view('partials.articleArticle');
+    $articles = Article::all();
+    return view('partials.articleArticle', compact('articles'));
 })->middleware(['auth'])->name('article');
 
 Route::get('/admin', function () {

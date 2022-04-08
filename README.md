@@ -21,7 +21,7 @@ Exercice laravel_middleware_1_part_3
 Faites un commit
 - Dans le back-office(page home)
 Rajoutez un lien dans le menu de gauche vers des pages pour un crud d'articles (id,titre,texte,user_id)
-- Créate
+- Create
 - Show
 - Edit
 - Delete

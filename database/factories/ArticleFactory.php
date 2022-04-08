@@ -16,8 +16,11 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
+        $faker = $this->faker;
         return [
-            //
+            'titre' => $faker->realText($maxNbChars = 10),
+            'text' => $faker->realText($maxNbChars = 1000),
+            'user_id' => 1
         ];
     }
 }
