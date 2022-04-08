@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->middleware(['auth'])->name('home');
 
 Route::get('/accueil', function () {
     $users = User::all();
@@ -29,7 +29,7 @@ Route::get('/article', function () {
 
 Route::get('/admin', function () {
     return view('partials.backofficebackoffice');
-})->middleware(['auth'])->name('admin');
+})->middleware(['auth', 'admin'])->name('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
