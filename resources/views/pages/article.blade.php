@@ -1,3 +1,3 @@
 @section('content')
-    @include('pages.article')
+    @include('partials.articleArticle')
 @endsection

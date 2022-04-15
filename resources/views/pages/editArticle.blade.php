@@ -1,5 +1,4 @@
 @extends('layouts.app2')
 @section('content')
-  @include('partials.accueilAccueil')
+    @include('partials.formEditArticle')
 @endsection
-        

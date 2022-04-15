@@ -42,10 +42,10 @@
                 </div>
 
                 <div class="mt-2">
-                    <p class="font-bold text-gray-700 dark:text-white">{{ $article->text }}</p>
+                    <p class="font-bold text-gray-700 dark:text-white">{{ $article->texte }}</p>
                 </div>
 
-                {{-- <div class="flex justify-end">
+                <div class="flex justify-end">
                     <a href="/article/{{ $article->id }}" class="text-white bg-green-700 mr-2 px-2 rounded">Lire
                         l'article</a>
                     @if (Auth::user()->role->role == 'admin' || Auth::user()->role->role == 'webmaster' || (Auth::user()->role->role == 'redacteur' && $article->user->id == Auth::user()->id) )
@@ -54,10 +54,10 @@
                         <form action="/article/{{ $article->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="text-white bg-red-700 px-2 rounded">X</button>
+                            <button class="text-white bg-red-700 px-2 rounded">Supprimer</button>
                         </form>
                     @endif
-                </div> --}}
+                </div>
             </div>
         @endforeach
     </div>

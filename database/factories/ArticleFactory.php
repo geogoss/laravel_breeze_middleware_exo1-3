@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
         $faker = $this->faker;
         return [
             'titre' => $faker->realText($maxNbChars = 10),
-            'text' => $faker->realText($maxNbChars = 1000),
+            'texte' => $faker->realText($maxNbChars = 1000),
             'user_id' => 1
         ];
     }

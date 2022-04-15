@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Models\Article;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $users = User::all();
+    return view('welcome', compact('users'));
 })->middleware(['auth'])->name('home');
 
 Route::get('/accueil', function () {
@@ -24,17 +26,22 @@ Route::get('/accueil', function () {
     return view('pages.accueil', compact('users'));
 })->name('accueil');
 
-Route::get('/article', function () {
-    $articles = Article::all();
-    return view('partials.articleArticle', compact('articles'));
-})->middleware(['auth'])->name('article');
+
+Route::resource('article', ArticleController::class)->middleware(['auth']);
+
+
+
 
 Route::get('/admin', function () {
     return view('partials.backofficebackoffice');
 })->middleware(['auth', 'admin'])->name('admin');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $users = User::all();
+    return view('dashboard', compact('users'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+

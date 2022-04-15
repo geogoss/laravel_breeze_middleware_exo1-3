@@ -4,6 +4,11 @@
             <div class="p-6 bg-white border-b border-gray-200">
                 <section class="w-full">
                     <h1 class="text-center text-6xl">Bienvenue sur ce site</h1>
+                    <h2>Vous n'êtes pas les bienvenue sur ce site</h2>
+                    <h3>Cette fois je vous laisse venir sur ce site mais pas </h3>
+                    <h4>Bonjour et bienvenue</h4>
+                    <h5>Yes I Can!!!</h5>
+                    
                 </section>
             </div>
         </div>

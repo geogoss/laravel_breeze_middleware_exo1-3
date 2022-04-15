@@ -19,11 +19,6 @@
           <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <nav class=" text-xl text-gray-500">
-                    {{-- <div>
-                        <a class="ml-10 "  href="/">home</a>
-                        <a class="ml-10 "  href="/accueil">accueil</a>
-                        <a class="ml-10 "  href="/article">article</a>
-                    </div> --}}
                     <div class="flex">
                         <!-- Logo -->
                         <div class="shrink-0 flex items-center">
@@ -33,20 +28,13 @@
                         </div>
         
                         <!-- Navigation Links -->
+        
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                                {{ __('home') }}
+                            {{-- @if (Auth::user()) --}}
+                            <x-nav-link href="/article" :active="request()->routeIs('article')">
+                                {{ __('articles') }}
                             </x-nav-link>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('accueil')" :active="request()->routeIs('accueil')">
-                                {{ __('accueil') }}
-                            </x-nav-link>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('article')" :active="request()->routeIs('article')">
-                                {{ __('article') }}
-                            </x-nav-link>
+                            {{-- @endif --}}
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">

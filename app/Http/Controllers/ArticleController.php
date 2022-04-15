@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -15,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        return view('partials.articleArticle', compact('articles'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('partials.formCreateArticle');
     }
 
     /**
@@ -36,7 +38,12 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        //
+        $article = new Article();
+        $article->titre = $request->titre;
+        $article->texte = $request->texte;
+        $article->user_id = Auth::user()->id;
+        $article->save();
+        return redirect('/article/create');
     }
 
     /**
@@ -47,7 +54,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('partials.showArticle', compact('article'));
     }
 
     /**
@@ -58,7 +65,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('partials.formEditArticle', compact('article'));
     }
 
     /**
@@ -70,7 +77,10 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article)
     {
-        //
+        $article->titre = $request->titre;
+        $article->texte = $request->texte;
+        $article->save();
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +91,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return redirect()->back();
     }
 }
