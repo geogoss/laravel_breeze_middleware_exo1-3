@@ -65,7 +65,11 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('partials.formEditArticle', compact('article'));
+        if (Auth::user()->id == $article->user->id){
+            return view('partials.formEditArticle', compact('article'));
+        }else {
+            return redirect()->back();
+        }
     }
 
     /**
