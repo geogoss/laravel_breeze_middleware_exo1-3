@@ -29,6 +29,8 @@
             scénarios », depuis « devoir continuer à traiter des victimes en masse » jusqu’à « des attaques chimiques »,
             a-t-il affirmé. « Il n’y a pas d’assurance que la guerre ne va pas empirer », a reconnu M. Kluge.
         </p>
+    <p>Bonjouor</p>
+
 
     </article>
     <div class="flex flex-wrap">
