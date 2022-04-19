@@ -15,12 +15,7 @@
             <div class="h-64 bg-cover lg:rounded-lg lg:h-full"
                 style="background-image:url('https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')">
             </div>
-        </div>
-        <p class="text-white">Bonjour</p>
-        <p>Au revoir</p>
-        <p>rebonjour</p>
-            
-
+        </div>        
         <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">Build Your New <span
                     class="text-blue-600 dark:text-blue-400">Idea</span></h2>

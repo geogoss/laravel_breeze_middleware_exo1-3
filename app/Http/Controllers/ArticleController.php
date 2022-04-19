@@ -65,11 +65,15 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        if (Auth::user()->id == $article->user->id){
+            $this->authorize('test', $article);
             return view('partials.formEditArticle', compact('article'));
-        }else {
-            return redirect()->back();
-        }
+
+        
+        // if (Auth::user()->id == $article->user->id){
+        //     return view('partials.formEditArticle', compact('article'));
+        // }else {
+        //     return redirect()->back();
+        // }
     }
 
     /**
@@ -95,6 +99,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        $this->authorize('redac' , $article);
         $article->delete();
         return redirect()->back();
     }
