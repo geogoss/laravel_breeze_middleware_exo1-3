@@ -45,6 +45,16 @@
                                                 <td class="p-2 whitespace-nowrap">
                                                     <div class="text-left font-medium text-green-500">{{$user->role->role}}</div>
                                                 </td>
+                                                <td>
+                                                    @can('admin', $user)
+                                                    <form action="/delete/{{ $user->id }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="text-white bg-red-700 px-2 rounded">Supprimer</button>
+                                                    </form>
+                                                        
+                                                    @endcan
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

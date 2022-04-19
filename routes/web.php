@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UserController;
 use App\Models\Article;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -51,7 +52,7 @@ Route::get('/dashboard', function () {
     return view('dashboard', compact('users'));
 })->middleware(['auth'])->name('dashboard');
 
-
+Route::delete('/delete/{id}', [UserController::class, 'destroy'] );
 
 require __DIR__.'/auth.php';
 

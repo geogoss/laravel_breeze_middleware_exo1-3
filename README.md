@@ -44,4 +44,23 @@ Exercice laravel_middleware_1_part_5
 - Les rédacteurs ne peuvent accéder a l'édit et l'update et le delete uniquement que des articles qu'ils ont eux même créez, ils ne peuvent pas edit/update/delete les articles des autres.
 
 
+Exercice Gate 1
+Dans le projet middleware
+-Permettre aux rédacteur de ne voir que les buttons delete de leurs articles
+
+
+Exercice Gate 2
+Dans le projet middleware
+- Créer plusieurs Admin
+- Chaque Admin doit pouvoir supprimer tous les users mis à part eux même ou un user qui aurait le role admin
+- Les admins ne peuvent editer que des personnes qui n'ont pas le role Admin
+
+
+Exercice Gate 3
+Dans le projet middleware
+- Les Webmaster ne peuvent ni supprimer un admin, ni un autre webmaster
+- Les Webmaster ne peuvent ni editer un autre webmaster ni éditer un admin
+- Les webmaster ne peuvent pas donner le role Admin et Webmaster à un user
+
+
 
