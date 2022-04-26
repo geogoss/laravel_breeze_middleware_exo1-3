@@ -36,24 +36,27 @@
                                             <tr>
                                                 <td class="p-2 whitespace-nowrap">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium text-gray-800">{{$user->firstname}}</div>
+                                                        <div class="font-medium text-gray-800">{{ $user->firstname }}
+                                                        </div>
                                                     </div>
                                                 </td>
                                                 <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left">{{$user->email}}</div>
+                                                    <div class="text-left">{{ $user->email }}</div>
                                                 </td>
                                                 <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-medium text-green-500">{{$user->role->role}}</div>
+                                                    <div class="text-left font-medium text-green-500">
+                                                        {{ $user->role->role }}</div>
                                                 </td>
-                                                <td>
+                                                <td class="flex">
                                                     @can('admin', $user)
-                                                    <form action="/delete/{{ $user->id }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="text-white bg-red-700 px-2 rounded">Supprimer</button>
-                                                    </form>
-                                                        
+                                                        <form action="/delete/{{ $user->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button
+                                                                class="text-white bg-red-700 px-2 rounded">Supprimer</button>
+                                                        </form>
                                                     @endcan
+                                                    <a href="/role/{{ $user->role->id }}/edit ">Editer</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -68,11 +71,3 @@
     </div>
 
 </x-app-layout>
-
-
-
-
-
-
-
-

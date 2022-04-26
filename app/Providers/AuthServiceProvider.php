@@ -35,6 +35,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin', function ($user, $users) {
             return $users->role->role != 'admin';
         });
+        Gate::define('test2', function ($user, $role) {
+            return $user->id == $role->user_id;
+        });
+        
 
 
     }

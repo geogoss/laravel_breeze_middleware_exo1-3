@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
+use App\Models\User;
 
 class RoleController extends Controller
 {
@@ -58,9 +59,10 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('partials.formEditRole', compact('role'));
+        $user = User::all();
+        return view('partials.formEditRole', compact('role', 'user'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -70,7 +72,7 @@ class RoleController extends Controller
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {
-        $role-> $request->role;
+        $role->role =  $request->role;
         $role->save();
         return redirect()->back();
     }
